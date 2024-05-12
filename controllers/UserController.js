@@ -8,7 +8,7 @@ module.exports.renderProductPage = async (req, res) => {
     // res.render("product");
     return res.status(200).json({
       msg:"go to this page",
-      url:"http://localhost:5000/product"
+      url:"https://netflix-backend-3.onrender.com/product"
     })
   } catch (error) {
     console.log(error.message);
