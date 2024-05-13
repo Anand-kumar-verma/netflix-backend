@@ -3,17 +3,18 @@ const MovieModel = require("../models/MovieModel");
 const User = require("../models/UserModel");
 const { use } = require("../routes/UserRoutes");
 module.exports.renderProductPage = async (req, res) => {
-  console.log("inside the function");
+  console.log("inside the function")
   try {
     // res.render("product");
     return res.status(200).json({
-      msg: "go to this page",
-      url: "https://netflix-frontend-sigma.vercel.app/",
-    });
+      msg:"go to this page",
+      url:"https://netflix-backend-3.onrender.com/product"
+    })
   } catch (error) {
     console.log(error.message);
   }
 };
+
 
 module.exports.getLikedMovies = async (req, res) => {
   try {
@@ -28,7 +29,7 @@ module.exports.getLikedMovies = async (req, res) => {
 };
 module.exports.getBookedMovies = async (req, res) => {
   const { email } = req.body;
-  console.log(email);
+  console.log(email)
   try {
     const user = await BookMove.findOne({ email }).populate("movie");
     if (user) {
