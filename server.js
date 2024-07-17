@@ -25,6 +25,11 @@ mongoose
 app.use("/api/user", userRoutes);
 
 app.use('/',paymentRoute);
+app.get('/hoome',(req,res)=>{
+  res.status(200).json({
+    msg:`<h1>This is home route</h1>`
+  })
+});
 
 app.listen(5000, () => {
   console.log("server started on port 5000");
